@@ -321,19 +321,18 @@
       
         
           
-            <p>#上传代码到Cocoapod需要注意的地方</p>
-<blockquote>
+            <h1 id="上传代码到Cocoapod需要注意的地方"><a href="#上传代码到Cocoapod需要注意的地方" class="headerlink" title="上传代码到Cocoapod需要注意的地方"></a>上传代码到Cocoapod需要注意的地方</h1><blockquote>
 <p>上传主要步骤可以参照这篇<a href="http://www.jianshu.com/p/1db5cb08e35c" target="_blank" rel="external">【最新】上传代码到cocoapod</a></p>
 </blockquote>
 <p>本文主要是用来以防以后想要上传自己写好的代码到Cocoapod供别人使用遇到的一些问题，主要问题是处在pod spec lint xxx.podspec 文件不通过。会报错，这时候要看清楚报错的内容。下面是容易犯错的地方</p>
-<p>1.在填写podspec文件的时候，将value值的英文双引号写成中文的双引号。就算你从别的地方复制过来是双引号，由于mac系统默认的设置都会自动地转成中文的双引号。可以在设置-&gt;键盘-&gt;文本-&gt;右边的双引号样式和单引号样式选择最后一个就可以了。</p>
+<p>1.在填写podspec文件的时候，将value值的英文双引号写成中文的双引号。就算你从别的地方复制过来是双引号，由于mac系统默认的设置都会自动地转成中文的双引号。可以在设置->键盘->文本->右边的双引号样式和单引号样式选择最后一个就可以了。</p>
 <p>2.有的时候虽然你在你自己的代码工程里面编译通过没问题，但是你pod spec lint 检测的时候都会通不过，原因是因为你的工程里面代码文件有警告，例如你将一个参数原本是填YES/NO的，你填成了nil，在工程里面虽然不报错，能编译过，但是你检测的时候是不过的。不过这种警告都会列出来，你可以很清楚的知道在哪个类的哪一行出现这种错误，修改过来就可以了。</p>
-<p>3.有时候你假如在你的工程文件里面引用了第三方框架的东西，例如你import <afnetworking.h>,会检测不通过，她说AFNetworking.h file not found.use “quote” 。这句话好像是说找不到<afnetworking.h>文件，叫你换成 “AFNetworking.h”就可以编译通过了.</afnetworking.h></afnetworking.h></p>
+<p>3.有时候你假如在你的工程文件里面引用了第三方框架的东西，例如你import \<afnetworking.h\>,会检测不通过，她说AFNetworking.h file not found.use “quote” 。这句话好像是说找不到\<afnetworking.h\>文件，叫你换成 “AFNetworking.h”就可以编译通过了.</afnetworking.h\></afnetworking.h\></p>
 <p>4.检测你的podspec时候，如果直接用pod spec lint xxx.podspec的话，出现错误的话它只会直接一句红色的话<code>The spec did not pass validation, due to 1 error.</code>告诉你的有多少个error和warning，而不会具体的指出你的错误出在哪里，这时候你可以在这句指令后面加上参数–verbose 这样就会告诉你具体的错误信息。这样根据它提示你的错误信息去解决就可以了。</p>
 <p>5.每次修改成功之后，记得要更改podspec里面的version版本。而且需要你在git里面打个tag，这个tag可以对应于这个版本号。具体如何打tag可以参考一下最上面给出的文章。有可能会检测出错提醒你例如下图的错误。因为没有这条分支，所以你clone不下来。这时候在git里面创建这条分支，推上去就可以了。</p>
-<p><img src="/Users/coderryan/MyBlog/blog/source/images/1134579-3dcd54c6955b40d4.png" alt=""></p>
+<p><img src="/images/upload_cocoapods_1.png" alt="1"></p>
 <p>编译成功的时候，会变成下面这个样子,然后你执行pod trunk push xxx.podspec 指令，稍等片刻，完成之后你在pod search xxx(你的podspec里面的s.name),成功之后就会出现到你的个人pod了，然后就可以给别人用，是不是很方便？平时的项目代码收集的好东西，赶紧封装成一个自己的库，然后弄上pod上面去和别人分享吧，让别人看你的代码，指出代码问题所在，这样才能促进自己的水平！</p>
-<p><img src="/Users/coderryan/MyBlog/blog/source/images/1134579-5f660f5c4a0f0ed1.png" alt=""></p>
+<p><img src="/images/upload_cocoapods_2.png" alt="2"></p>
 
           
         
