@@ -17,13 +17,13 @@
 					<key>kind</key>
 					<string>display-image</string>
 					<key>url</key>
-					<string>https://yoyo.ymtc.com:9010/ymtc-sso/image.57x57@2x.png</string>
+					<string>https://raw.githubusercontent.com/Ryan0520/Ryan0520.github.io/master/image.57x57%402x.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>full-size-image</string>
 					<key>url</key>
-					<string>https://yoyo.ymtc.com:9010/ymtc-sso/image.512x512.png</string>
+					<string>https://raw.githubusercontent.com/Ryan0520/Ryan0520.github.io/master/image.512x512.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
